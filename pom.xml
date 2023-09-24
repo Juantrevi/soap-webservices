@@ -61,7 +61,7 @@
                 <configuration>
                     <sources>
                         <!--XSD Source Folder-->
-                        <source>${project.basedir}/src/main/resources/course-details.xsd</source>
+                        <schemaDirectory>${project.basedir}/src/main/resources/course-details.xsd</schemaDirectory>
                     </sources>
                     <!--Java Object Source Folder-->
                     <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
