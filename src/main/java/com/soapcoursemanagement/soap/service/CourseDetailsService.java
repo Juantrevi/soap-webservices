@@ -10,6 +10,9 @@ import java.util.List;
 @Component
 public class CourseDetailsService {
 
+    public enum Status {
+        SUCCESS, FAILURE;
+    }
     private static List<Course> courses = new ArrayList<>();
         static {
             Course course1 = new Course(1, "Spring", "10 Steps");
@@ -34,16 +37,16 @@ public class CourseDetailsService {
     public List<Course> findAll() {
         return courses;
     }
-    public int deleteById(int id) {
+    public Status deleteById(int id) {
         Iterator<Course> iterator = courses.iterator();
         while(iterator.hasNext()) {
             Course course = iterator.next();
             if(course.getId() == id) {
                 iterator.remove();
-                return 1;
+                return Status.SUCCESS;
             }
         }
-        return 0;
+        return Status.FAILURE;
     }
 
 }
