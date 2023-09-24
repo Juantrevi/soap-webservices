@@ -16,7 +16,7 @@ public class CourseDetailsEndpoint {
     //Output - GetCourseDetailsResponse response
     //http://soapcoursemanagement.com/courses
     //GetCourseDetailsRequest
-    @PayloadRoot(namespace = "http://soapcoursemanagement.com/courses", localPart = "GetCourseDetailsRequest")
+    @PayloadRoot(namespace = "http://soapcoursemanagement.com/courses", localPart = "getCourseDetailsRequest")
     @ResponsePayload
     public GetCourseDetailsResponse processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
         GetCourseDetailsResponse response = new GetCourseDetailsResponse();
