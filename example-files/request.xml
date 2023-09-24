@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<getCourseDetailsRequest xmlns="http://soapcoursemanagement.com/courses">
+    <id>1</id> <!-- Only numbers -->
+</getCourseDetailsRequest>

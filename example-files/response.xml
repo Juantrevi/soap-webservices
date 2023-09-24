@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<getCourseDetailsResponse xmlns="http://soapcoursemanagement.com/courses">
+    <courseDetails>
+        <id>1</id>
+        <name>Spring</name>
+        <description>10 Steps</description>
+    </courseDetails>
+</getCourseDetailsResponse>
