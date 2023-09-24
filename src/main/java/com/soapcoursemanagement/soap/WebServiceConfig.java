@@ -6,16 +6,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.config.annotation.EnableWs;
+import org.springframework.ws.config.annotation.WsConfigurerAdapter;
+import org.springframework.ws.server.EndpointInterceptor;
+import org.springframework.ws.soap.security.wss4j2.Wss4jSecurityInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
+import java.util.List;
+
 //Spring Configuration
 @Configuration
 //Enable Spring Web Services
 @EnableWs
-public class WebServiceConfig {
+public class WebServiceConfig extends WsConfigurerAdapter {
     //MessageDispatcherServlet -> Frame controller, any request from client will be handled by this servlet
         //ApplicationContext -> Pass the request to Spring WS
     //URL -> /ws/*
@@ -50,4 +55,20 @@ public class WebServiceConfig {
     XsdSchema coursesSchema() {
         return new SimpleXsdSchema(new ClassPathResource("course-details.xsd"));
     }
+
+    @Bean
+    public Wss4jSecurityInterceptor securityInterceptor() {
+        Wss4jSecurityInterceptor securityInterceptor = new Wss4jSecurityInterceptor();
+        securityInterceptor.setSecurementActions("UsernameToken");
+        securityInterceptor.setSecurementUsername("user");
+        securityInterceptor.setSecurementPassword("password");
+
+        return securityInterceptor;
+    }
+
+
+    public void addInterceptors(List<EndpointInterceptor> interceptors) {
+        interceptors.add(securityInterceptor());
+    }
+
 }
