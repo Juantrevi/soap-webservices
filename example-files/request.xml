@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<getCourseDetailsRequest xmlns="http://soapcoursemanagement.com/courses">
+<getCourseDetailsRequest xmlns="http://soapcoursemanagement.com/courses"
+                         xsi:schemaLocation="http://soapcoursemanagement.com/courses course-details.xsd"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <id>1</id> <!-- Only numbers -->
 </getCourseDetailsRequest>

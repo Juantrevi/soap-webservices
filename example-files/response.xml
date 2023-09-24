@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<getCourseDetailsResponse xmlns="http://soapcoursemanagement.com/courses">
+<getCourseDetailsResponse xmlns="http://soapcoursemanagement.com/courses"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xsi:schemaLocation="http://soapcoursemanagement.com/courses course-details.xsd">
     <courseDetails>
         <id>1</id>
         <name>Spring</name>
